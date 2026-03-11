@@ -10,5 +10,7 @@ autoreconf --force --verbose --install
     --disable-dependency-tracking \
     --prefix=${PREFIX}
 make
+if [[ ${build_platform} == ${target_platform} ]]; then
 make check
+fi
 make install
